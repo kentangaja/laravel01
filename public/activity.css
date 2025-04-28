@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: white;
+}
+
+.navbar-home{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.navbar-home ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding-top: 5px;
+}
+
+.navbar-home ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.search-box {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    color: black;
+    outline: none;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+::placeholder {
+    color: black;
+}
+
+.search-box button {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.sign-in {
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+}
+
+section {
+    font-family: Arial, sans-serif;
+    background-color: #F5EEDC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 50px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.tabel-container {
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 10px;
+    background: #F5EEDC;
+    width: 780px;
+    height: 480px;
+    overflow: hidden;
+}
+
+table {
+    width: 755px;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: transparent;
+    border-right: 1px solid #000000;
+}
+
+.title {
+    border-right: 1px solid black;
+}
+
+.title, .title-1 {
+    border-bottom: 1px solid black;
+}
+
+.inside {
+    border-right: 1px solid black;
+    height: 455px;
+}
+
+.side-content {
+    width: 325px;
+    padding-left: 10px;
+}
+
+.deadline, .note {
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 10px;
+    background: #F5EEDC;
+    height: 230px;
+    overflow: hidden;
+}
+
+.deadline {
+    margin-bottom: 20px;
+}
+
+.sc-title {
+    border-bottom: 1px solid black;
+}
