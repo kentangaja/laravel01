@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -36,5 +38,25 @@ class UsersController extends Controller
             return back()->withInput();
         }
     }
+
+    public function login(Request $request)
+    {
+        $credentials = [
+            'user_username' => $request->input('user_username'),
+            'user_password' => $request->input('user_password'),
+        ];
+
+        $user = Users::where('user_username', $credentials['user_username'])->first();
+
+        if ($user && Hash::check($credentials['user_password'], $user->user_password)) {
+            Auth::login($user);
+            return redirect()->route('dashboard');
+        } else {
+            return back()->withErrors([
+                'message' => 'Username atau password Anda salah.',
+            ]);
+        }
+    }
+
 
 }

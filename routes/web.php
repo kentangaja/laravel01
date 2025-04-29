@@ -39,8 +39,10 @@ Route::get('/setting', [publicController::class, 'setting'])->name('setting');
 
 Route::get('/book', [publicController::class, 'book'])->name('book');
 
-Route::get('/signup', [publicController::class, 'register'])->name('signup');
+Route::get('/register', [publicController::class, 'register'])->name('register.form');
 
 Route::get('/login', [publicController::class, 'login'])->name('login');
+
+Route::post('/login', [UsersController::class, 'login'])->name('login');
 
 Route::post('/register', [UsersController::class, 'register'])->name('register');

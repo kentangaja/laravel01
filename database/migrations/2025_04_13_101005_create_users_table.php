@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('user_username', 50);
             $table->string('user_email', 50);
             $table->char('user_notelp', 13);
-            $table->string('user_password', 50);
+            $table->string('user_password', 225);
             $table->enum('user_level', ['admin','anggota'])->default('anggota');
         });
     }
