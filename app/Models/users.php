@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Permission\Traits\HasRoles;
 
 class users extends Authenticatable
 {
+    use HasRoles;
+
     protected $guarded = [];
 
     public $timestamps = false;
