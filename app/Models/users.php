@@ -16,6 +16,11 @@ class users extends Authenticatable
         return self::create($data);
     }
 
+    public function getRoleAttribute()
+    {
+        return $this->user_level; 
+    }
+
     public function peminjaman(): HasMany
     {
         return $this->hasMany(peminjaman::class);

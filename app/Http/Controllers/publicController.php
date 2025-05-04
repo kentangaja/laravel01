@@ -10,6 +10,10 @@ class publicController extends Controller
         return view('public.dashboard');
     }
 
+    public function dashboardadmin () {
+        return view('public.admindashboard');
+    }
+
     public function setting () {
         return view('public.setting');
     }

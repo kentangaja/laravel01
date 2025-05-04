@@ -50,13 +50,24 @@ class UsersController extends Controller
 
         if ($user && Hash::check($credentials['user_password'], $user->user_password)) {
             Auth::login($user);
-            return redirect()->route('dashboard');
+
+            // Cek role dan arahkan ke dashboard yang sesuai
+            if ($user->user_level === 'admin') {
+                return redirect()->route('admindashboard');
+            } elseif ($user->user_level === 'anggota') {
+                return redirect()->route('dashboard');
+            } else {
+                // Kalau rolenya gak dikenal
+                Auth::logout();
+                return back()->withErrors([
+                    'message' => 'Role tidak dikenal.',
+                ]);
+            }
         } else {
             return back()->withErrors([
                 'message' => 'Username atau password Anda salah.',
             ]);
         }
     }
-
 
 }
