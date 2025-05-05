@@ -11,6 +11,7 @@ use App\Http\Controllers\publicController;
 use App\Http\Controllers\RakController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Framework\MockObject\Rule\Parameters;
 
 Route::get('/', function () {
     return view('welcome');
@@ -30,7 +31,9 @@ Route::resource('kategori', KategoriController::class);
 
 Route::resource('buku', BukuController::class);
 
-Route::resource('peminjaman', PeminjamanController::class);
+Route::resource('peminjaman', PeminjamanController::class)->parameters([
+    'peminjaman' => 'peminjaman'
+]);
 
 Route::resource('peminjamanDetail', PeminjamanDetailController::class);
 
@@ -41,6 +44,8 @@ Route::resource('penulis', PenulisController::class)->parameters([
 ]);
 
 Route::resource('rak', RakController::class);
+
+Route::resource('users', UsersController::class);
 
 Route::get('/activity', [publicController::class, 'activity'])->name('activity');
 

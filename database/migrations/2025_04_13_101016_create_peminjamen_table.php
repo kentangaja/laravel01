@@ -16,9 +16,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onUpdate('cascade');
             $table->date('peminjaman_tglpinjam');
             $table->date('peminjaman_tglkembali');
-            $table->boolean('peminjaman_statuskembali');
+            $table->boolean('peminjaman_statuskembali')->default(false); // false = belum kembali
             $table->string('peminjaman_note', 100);
-            $table->integer('peminjaman_denda');
+            $table->unsignedInteger('peminjaman_denda')->default(0);
         });
     }
 
