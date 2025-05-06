@@ -49,7 +49,7 @@
                             @foreach ($allPeminjaman as $key => $r)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $r->user->user_nama ?? 'Tidak ada data' }}</td>
+                                    <td>{{ $r->user->user_username ?? 'Tidak ada data' }}</td>
                                     <td>{{ $r->peminjaman_tglpinjam }}</td>
                                     <td>{{ $r->peminjaman_tglkembali }}</td>
                                     <td>
